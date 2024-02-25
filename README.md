@@ -23,12 +23,12 @@ python3 app.py
 Access the application through a web browser at http://localhost:5000.
 
 ## File Structure
-main.html: Main landing page HTML template.
-checkseller.html: HTML template for seller information page.
-checkinfo.html: HTML template for user information page.
-products.html: HTML template for displaying products.
-publishseller.html: HTML template for sellers to publish products.
-app.py: Main Flask application file containing all the routes and logic.
+- main.html: Main landing page HTML template.
+- checkseller.html: HTML template for seller information page.
+- checkinfo.html: HTML template for user information page.
+- products.html: HTML template for displaying products.
+- publishseller.html: HTML template for sellers to publish products.
+- app.py: Main Flask application file containing all the routes and logic.
 
 ## Note
 Passwords are hashed and salted for security.
