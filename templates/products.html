@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='image/other/logo_icon.png') }}" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Navigation Bar HTML -->
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Nittany Market</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <!-- Navigation Bar column HTML -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/checkinfo">Home</a>
+           <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <title>Products</title>
+</head>
+
+<!-- Show parent category and subcategories -->
+<body style="background-color:grey;">
+    <div style="text-align:center;">
+    <h3> Welcome to the Products page! </h3>
+    </div>
+
+     <form action="/viewcatalog" method="POST">
+     <div style="text-align:center;">
+     <input type="submit" value="View Catalog" id="login-form-submit" style="background-color:green">
+     </div>
+         <div class="container">
+             <div class="row">
+                 <!{% for parentCategory in result %}>
+
+                 <!-- Get parent category value-->
+                <div class="col-md-3 mt-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="text-cent">{{ parentCategory[0]}}</h5>
+                        </div>
+
+                        <div class="card-footer">
+                            <!-- Go to correct form and use value -->
+                                 <div>
+                                <div style="width:50%;Text-align:center;float:left;">
+                                    <form action="/viewsubcatalog" method="POST">
+                                        <input type="hidden" id="parentCategory" name="parentCategory" value= {{ parentCategory[0] }} >
+                                        <button href="/viewsubcatalog" onclick={{ parentCategory[0] }} id= {{ parentCategory[0] }}  class="float-middle btn btn-sm btn-primary">Subcategory</button>
+                                    </form>
+                                </div>
+
+                                     <!-- Go to correct form and use value -->
+                                    <div style="Text-align:right;Width:50%;float:right">
+                                      <form action="/correctproducts" method="POST">
+                                          <input type="hidden" id="subCategory" name="subCategory" value={{ parentCategory[0] }}>
+                                        <button href="/correctproducts" onclick={{ parentCategory[0] }} id= {{ parentCategory[0] }}  class="float-right btn btn-sm btn-primary">Products</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            <div>
+
+                        </div>
+
+                            </div>
+
+                    </div>
+                </div>
+                 <!{% endfor %}>
+             </div>
+         </div>
+     </form>
+
+</body>
+</html>
