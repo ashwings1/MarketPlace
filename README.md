@@ -1,6 +1,4 @@
 # MarketPlace
-
-# Flask E-Commerce Platform
 This is a Flask-based web application for an e-commerce platform. Users can register, log in, view products, publish products (if they're sellers), and perform various other actions related to managing their account and products.
 
 ## Setup
