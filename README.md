@@ -2,9 +2,11 @@
 This is a Flask-based web application for an e-commerce platform. Users can register, log in, view products, publish products (if they're sellers), and perform various other actions related to managing their account and products.
 
 ## Setup
-Clone this repository to your local machine.
-Make sure Python has been installed.
-Install Flask using 
+- Clone this repository to your local machine.
+
+- Make sure Python has been installed.
+
+- Install Flask using 
 ```
 pip install Flask
 ```
@@ -34,5 +36,6 @@ Access the application through a web browser at http://localhost:5000.
 - app.py: Main Flask application file containing all the routes and logic.
 
 ## Note
-Passwords are hashed and salted for security.
-The application uses SQLite for the database.
+- Passwords are hashed and salted for security.
+
+- The application uses SQLite for the database.
